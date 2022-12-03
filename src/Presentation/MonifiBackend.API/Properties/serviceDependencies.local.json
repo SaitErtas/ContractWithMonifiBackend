@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "compute.appService1": {
+      "group": "connections",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Web/sites/monifi",
+      "type": "compute.appService.container"
+    },
+    "secrets1": {
+      "type": "secrets.user"
+    }
+  }
+}

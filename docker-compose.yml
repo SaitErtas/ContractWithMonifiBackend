@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  monifibackend.api:
+    image: ${DOCKER_REGISTRY-}monifibackendapi
+    build:
+      context: .
+      dockerfile: src/Presentation/MonifiBackend.API/Dockerfile

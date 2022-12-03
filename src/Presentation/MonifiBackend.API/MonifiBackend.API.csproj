@@ -1,0 +1,53 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<Nullable>disable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<UserSecretsId>2fb1dea0-0333-4df9-acc0-dc15dfaf7778</UserSecretsId>
+		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+		<DockerfileContext>..\..\..</DockerfileContext>
+		<DockerComposeProjectPath>..\..\..\docker-compose.dcproj</DockerComposeProjectPath>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="AspNetCore.HealthChecks.SqlServer" Version="6.0.2" />
+		<PackageReference Include="AspNetCore.HealthChecks.UI" Version="6.0.4" />
+		<PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="6.0.4" />
+		<PackageReference Include="AspNetCore.HealthChecks.UI.InMemory.Storage" Version="6.0.4" />
+		<PackageReference Include="EntityFramework" Version="6.4.4" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.4">
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+			<PrivateAssets>all</PrivateAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.14.0" />
+		<PackageReference Include="Serilog.AspNetCore" Version="5.0.0" />
+		<PackageReference Include="Serilog.Settings.Configuration" Version="3.3.0" />
+		<PackageReference Include="Serilog.Sinks.MSSqlServer" Version="5.7.1" />
+		<PackageReference Include="Sgbj.Cron.CronTimer" Version="1.0.0" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+		<PackageReference Include="Swashbuckle.AspNetCore.ReDoc" Version="6.3.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\Modules\Core\MonifiBackend.Core.Infrastructure\MonifiBackend.Core.Infrastructure.csproj" />
+		<ProjectReference Include="..\..\Modules\PackageModule\MonifiBackend.PackageModule.Application\MonifiBackend.PackageModule.Application.csproj" />
+		<ProjectReference Include="..\..\Modules\PackageModule\MonifiBackend.PackageModule.Infrastructure\MonifiBackend.PackageModule.Infrastructure.csproj" />
+		<ProjectReference Include="..\..\Modules\UserModule\MonifiBackend.UserModule.Application\MonifiBackend.UserModule.Application.csproj" />
+		<ProjectReference Include="..\..\Modules\UserModule\MonifiBackend.UserModule.Infrastructure\MonifiBackend.UserModule.Infrastructure.csproj" />
+		<ProjectReference Include="..\..\Modules\WalletModule\MonifiBackend.WalletModule.Application\MonifiBackend.WalletModule.Application.csproj" />
+		<ProjectReference Include="..\..\Modules\WalletModule\MonifiBackend.WalletModule.Infrastructure\MonifiBackend.WalletModule.Infrastructure.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Update="wwwroot\Templates\LoginEmail.html">
+	    <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+	    <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+	  </Content>
+	</ItemGroup>
+
+</Project>
